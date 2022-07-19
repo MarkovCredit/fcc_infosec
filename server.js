@@ -8,7 +8,7 @@ var app = express();
 app.disable("x-powered-by");
 var fs = require("fs");
 var path = require("path");
-var helmet = require('helmet')
+
 
 app.use(function (req, res, next) {
   res.set({
@@ -16,6 +16,9 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Headers":
       "Origin, X-Requested-With, content-type, Accept",
   });
+  helmet({
+
+  })
   app.disable("x-powered-by");
   next();
 });
@@ -66,7 +69,7 @@ app.use(function (req, res, next) {
   res.status(404).type("txt").send("Not Found");
 });
 
-app.use(helmet.hidePoweredBy());
+
 
 module.exports = app;
 
