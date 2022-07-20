@@ -15,10 +15,7 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers":
       "Origin, X-Requested-With, content-type, Accept",
-  });
-  helmet({
-
-  })
+  }); 
   app.disable("x-powered-by");
   next();
 });
